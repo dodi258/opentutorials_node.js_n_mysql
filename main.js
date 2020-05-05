@@ -6,12 +6,15 @@ var template = require('./lib/template.js');
 var path = require('path');
 var sanitizeHtml = require('sanitize-html');
 var mysql = require('mysql');
+var config = require('./config/key'); 
+
 var db = mysql.createConnection({
-  host:'localhost',
-  user:'root',
-  password:'wnwn102930!',
-  database:'opentutorials'
+  host:config.mysqlHOST,
+  user:config.mysqlUSER,
+  password:config.mysqlPASSWORD,
+  database:config.mysqlDATABASE
 });
+
 db.connect();
  
  
